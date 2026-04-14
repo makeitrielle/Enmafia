@@ -39,7 +39,7 @@ client.on('interactionCreate', async (interaction) => {
         if (interaction.commandName === 'lobby') {
             game.players = [];
             const embed = new EmbedBuilder()
-                .setTitle('🕶️ EnMafia: Underworld Recruitment')
+                .setTitle('🕶️ EnMafia: Vampires Recruitment')
                 .setDescription('The Don is looking for 15 associates. Are you in?')
                 .setColor(0x1a1a1a);
 
@@ -50,7 +50,7 @@ client.on('interactionCreate', async (interaction) => {
         }
 
         if (interaction.commandName === 'start') {
-            if (game.players.length < 4) return interaction.reply("Not enough members for a hit.");
+            if (game.players.length < 4) return interaction.reply("Not enough members to start the game.");
             
             const shuffled = [...game.players].sort(() => 0.5 - Math.random());
             const mafiaCount = game.players.length >= 10 ? 3 : 2;
